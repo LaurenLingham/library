@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block content %}
+
+  <hr>
+  <div>
+    <p>{{ book.title }}</p>
+    <p>by {{ book.author.full_name() }}</p>
+    <p>{{ book.genre }}</p>
+    <p>First published in {{ book.year_published }}</p>
+    <p><a href="/books/{{ book.id }}/edit">Edit</a></p>
+  </div>
+
+{% endblock %}}

@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+
+<hr>
+{% for book in all_books %}
+    <div>
+        <a href="/books/{{ book.id }}">{{ book.title }}</a>
+        <div>
+            by {{ book.author.full_name() }}
+            <div>
+                {{ book.genre }}
+            </div>
+            <div>
+                <i>First published in {{ book.year_published }}</i>
+            </div>
+        </div>
+        <div class="buttons">
+            <form class="delete-form" action="/books/{{ book.id }}/delete" method="POST">
+                <button class="trash-button"><i class="fa fa-trash-o fa-3x" style="color:red" aria-hidden="true"></i></button>
+            </form>
+            <hr>           
+        </div>
+    </div>
+
+{% endfor %}
+
+{% endblock %}
