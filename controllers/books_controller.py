@@ -30,7 +30,7 @@ def create_book():
 @books_blueprint.route("/books/<id>", methods=['GET'])
 def show_book(id):
     book = book_repository.select(id)
-    return render_template('books/show.html', book = book)
+    return render_template('books/book.html', book = book)
 
 @books_blueprint.route("/books/<id>/edit", methods=['GET'])
 def edit_book(id):
